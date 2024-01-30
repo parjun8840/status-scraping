@@ -20,7 +20,7 @@ class CustomCollector(object):
         status=inter[0].text.splitlines()
         print(status[2].strip(),status[7].strip())
         g = GaugeMetricFamily("ActionsStatus", 'Fetching status from GitHub Page', labels=['actions'])
-        if (status[2].strip() == "Actions") and (status[7].strip() == "Operationali"):
+        if (status[2].strip() == "Actions") and (status[7].strip() == "Operational"):
             g.add_metric(["Operational"],1)
         else:
             g.add_metric(["Operational"],0)
